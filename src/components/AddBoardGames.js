@@ -43,8 +43,8 @@ class AddBoardGames extends React.Component{
         return(
             <form onSubmit={this.addBoardGame}>
                 <input placeholder="Name of Board Game" onChange={this.handleName} required/>
-                <input placeholder="Max Players" onChange={this.handleMax} required/>
-                <input placeholder="Minimun Players" onChange={this.handleMin} required/>
+                <input type="number" placeholder="Max Players" min="1" onChange={this.handleMax} required/>
+                <input type="number" placeholder="Minimun Players" min="1" onChange={this.handleMin} required/>
                 <input placeholder="Game Description" onChange={this.handleDesc} required/>
                 <input type="submit" value="Add Board Game"/>
             </form>
