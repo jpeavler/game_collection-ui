@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import AddBoardGames from './AddBoardGames';
 
 class BoardGames extends React.Component{
     constructor(props){
@@ -38,6 +39,8 @@ class BoardGames extends React.Component{
                 <ul>
                     {BoardGameComponents}
                 </ul>
+                <h2>Add Board Game</h2>
+                <AddBoardGames getBoardGames={this.getBoardGames}/>
                 <Link to='/'>Home</Link>
             </>
         )
