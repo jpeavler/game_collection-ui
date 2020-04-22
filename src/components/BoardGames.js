@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import AddBoardGames from './AddBoardGames';
+import DeleteBoardGame from './DeleteBoardGame';
 
 class BoardGames extends React.Component{
     constructor(props){
@@ -25,7 +26,7 @@ class BoardGames extends React.Component{
     render(){
         const BoardGameComponents = this.state.boardGames.map(boardGame =>{
             return <li>
-            {boardGame.name}
+            {boardGame.name} <DeleteBoardGame _id={boardGame._id} getBoardGames={this.getBoardGames}/>
                 <ul>
                     <li>Id: {boardGame._id}</li>
                     <li>Players: {boardGame.num_players_min}-{boardGame.num_players_max}</li>
