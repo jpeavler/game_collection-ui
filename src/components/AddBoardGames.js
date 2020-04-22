@@ -10,11 +10,11 @@ class AddBoardGames extends React.Component{
             desc: ''
         }
 
-    this.addBoardGame = this.addBoardGame.bind(this);
-    this.handleName = this.handleName.bind(this);
-    this.handleMax = this.handleMax.bind(this);
-    this.handleMin = this.handleMin.bind(this);
-    this.handleDesc = this.handleDesc.bind(this);
+        this.addBoardGame = this.addBoardGame.bind(this);
+        this.handleName = this.handleName.bind(this);
+        this.handleMax = this.handleMax.bind(this);
+        this.handleMin = this.handleMin.bind(this);
+        this.handleDesc = this.handleDesc.bind(this);
     }
     addBoardGame(event) {
         event.preventDefault();
