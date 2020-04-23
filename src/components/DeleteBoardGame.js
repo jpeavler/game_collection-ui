@@ -15,7 +15,7 @@ class DeleteBoardGame extends React.Component{
         console.log(result);
         this.setState({canDelete: result}, () => {
             if (this.state.canDelete){
-                fetch(`http://localhost:5001/api/board_games/${this.state._id}`, {
+                fetch(`${process.env.REACT_APP_API_URL}/api/board_games/${this.state._id}`, {
                     method: "DELETE"
                 }).then(this.props.getBoardGames)
             }

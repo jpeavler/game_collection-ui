@@ -14,7 +14,7 @@ class BoardGames extends React.Component{
     }
     getBoardGames() {
         console.log('Called getBoardGames');
-        fetch('http://localhost:5001/api/board_games')
+        fetch(`${process.env.REACT_APP_API_URL}/api/board_games`)
             .then(response => response.json())
             .then(boardGames => this.setState({boardGames}, () => console.log(this.state.boardGames)))
             .catch(console.log)

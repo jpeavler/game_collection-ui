@@ -18,7 +18,7 @@ class AddBoardGames extends React.Component{
     }
     addBoardGame(event) {
         event.preventDefault();
-        fetch('http://localhost:5001/api/board_games', {
+        fetch(`${process.env.REACT_APP_API_URL}/api/board_games`, {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'

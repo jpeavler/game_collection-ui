@@ -36,7 +36,7 @@ class UpdateBoardGame extends React.Component{
             [this.state.keyToUpdate] : this.state.value
         }
         console.log(this.state._id);
-        fetch(`http://localhost:5001/api/board_games/${this.state._id}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/api/board_games/${this.state._id}`, {
             method: "PATCH",
             headers: {
                 'Content-type': 'application/json'
