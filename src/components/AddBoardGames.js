@@ -6,7 +6,7 @@ class AddBoardGames extends React.Component{
         this.state = {
             name: '',
             num_players_max: '',
-            num_players_min: '',
+            num_players_min: 1,
             desc: ''
         }
 
@@ -43,8 +43,8 @@ class AddBoardGames extends React.Component{
         return(
             <form onSubmit={this.addBoardGame}>
                 <input placeholder="Name of Board Game" onChange={this.handleName} required/>
-                <input type="number" placeholder="Max Players" min="1" onChange={this.handleMax} required/>
                 <input type="number" placeholder="Minimun Players" min="1" onChange={this.handleMin} required/>
+                <input type="number" placeholder="Max Players" min={this.state.num_players_min} onChange={this.handleMax} required/>
                 <input placeholder="Game Description" onChange={this.handleDesc} required/>
                 <input type="submit" value="Add Board Game"/>
             </form>
