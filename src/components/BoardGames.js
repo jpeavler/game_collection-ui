@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import AddBoardGames from './AddBoardGames';
 import DeleteBoardGame from './DeleteBoardGame';
+import UpdateBoardGame from './UpdateBoardGame'
 
 class BoardGames extends React.Component{
     constructor(props){
@@ -36,12 +37,15 @@ class BoardGames extends React.Component{
         return (
             <>
                 <h1>Board Games</h1>
+                <h2>Add Board Game</h2>
+                <AddBoardGames getBoardGames={this.getBoardGames}/>
+                <h2>Update Board Game</h2>
+                <UpdateBoardGame/>
+                <h2>List of Board Games</h2>
                 <button onClick={this.getBoardGames}>Refresh Board Games</button>
                 <ul>
                     {BoardGameComponents}
                 </ul>
-                <h2>Add Board Game</h2>
-                <AddBoardGames getBoardGames={this.getBoardGames}/>
                 <Link to='/'>Home</Link>
             </>
         )
