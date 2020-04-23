@@ -40,7 +40,7 @@ class BoardGames extends React.Component{
                 <h2>Add Board Game</h2>
                 <AddBoardGames getBoardGames={this.getBoardGames}/>
                 <h2>Update Board Game</h2>
-                <UpdateBoardGame/>
+                <UpdateBoardGame getBoardGames={this.getBoardGames}/>
                 <h2>List of Board Games</h2>
                 <button onClick={this.getBoardGames}>Refresh Board Games</button>
                 <ul>

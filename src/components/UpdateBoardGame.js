@@ -32,12 +32,23 @@ class UpdateBoardGame extends React.Component{
     }
     handleSubmit(event){
         event.preventDefault();
+        let updateData ={
+            [this.state.keyToUpdate] : this.state.value
+        }
+        console.log(this.state._id);
+        fetch(`http://localhost:5001/api/board_games/${this.state._id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(updateData)
+        }).then(this.props.getBoardGames);
     }
     render(){
-        const UpdateValue = <input type={this.state.typeInput} placeholder="Update value to" onChange={this.haldleValue} min="1"/>
+        const UpdateValue = <input type={this.state.typeInput} placeholder="Update value to" onChange={this.handleValue} min="1"/>
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="Game ID to Update"/>
+                <input type="text" placeholder="Game ID to Update" onChange={this.handleID}/>
                 <label htmlFor="key">Select value to update: </label>
                 <select id="key" onChange={this.handleSelection}>
                     <option value="name">Game Name</option>
@@ -46,7 +57,7 @@ class UpdateBoardGame extends React.Component{
                     <option value="desc">Game Description</option>
                 </select>
                 {UpdateValue}
-                <input type="submit" value="Update" />
+                <input type="submit" value="Update"/>
             </form>
         )
     }
