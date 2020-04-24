@@ -27,11 +27,11 @@ class BoardGames extends React.Component{
     render(){
         const BoardGameComponents = this.state.boardGames.map(boardGame =>{
             return <li>
-            {boardGame.name} <DeleteBoardGame _id={boardGame._id} getBoardGames={this.getBoardGames}/>
+            <h3>{boardGame.name}</h3> <DeleteBoardGame _id={boardGame._id} getBoardGames={this.getBoardGames}/>
                 <ul>
-                    <li>Id: {boardGame._id}</li>
-                    <li>Players: {boardGame.num_players_min}-{boardGame.num_players_max}</li>
-                    <li>Description: {boardGame.desc}</li>
+                    <li class="GameItem">Id: {boardGame._id}</li>
+                    <li class="GameItem">Players: {boardGame.num_players_min}-{boardGame.num_players_max}</li>
+                    <li class="GameItem">Description: {boardGame.desc}</li>
                 </ul>
             </li>})
         return (
@@ -46,7 +46,7 @@ class BoardGames extends React.Component{
                 <ul>
                     {BoardGameComponents}
                 </ul>
-                <Link to='/'>Home</Link>
+                <Link to='/'>Back to Home</Link>
             </>
         )
     }

@@ -48,7 +48,7 @@ class UpdateBoardGame extends React.Component{
         const UpdateValue = <input type={this.state.typeInput} placeholder="Update value to" onChange={this.handleValue} min="1"/>
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="Game ID to Update" onChange={this.handleID}/>
+                <input type="text" placeholder="Game ID to Update" onChange={this.handleID} required/>
                 <label htmlFor="key">Select value to update: </label>
                 <select id="key" onChange={this.handleSelection}>
                     <option value="name">Game Name</option>
