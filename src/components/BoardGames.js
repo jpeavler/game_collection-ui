@@ -29,14 +29,15 @@ class BoardGames extends React.Component{
             return <li>
             <h3>{boardGame.name}</h3> <DeleteBoardGame _id={boardGame._id} getBoardGames={this.getBoardGames}/>
                 <ul>
+                    <li class="GameItem">Description: {boardGame.desc}</li>
                     <li class="GameItem">Id: {boardGame._id}</li>
                     <li class="GameItem">Players: {boardGame.num_players_min}-{boardGame.num_players_max}</li>
-                    <li class="GameItem">Description: {boardGame.desc}</li>
                 </ul>
             </li>})
         return (
             <>
                 <h1>Board Games</h1>
+                <Link to='/' class="link">Back to Home</Link>
                 <h2>Add Board Game</h2>
                 <AddBoardGames getBoardGames={this.getBoardGames}/>
                 <h2>Update Board Game</h2>
@@ -46,7 +47,6 @@ class BoardGames extends React.Component{
                 <ul>
                     {BoardGameComponents}
                 </ul>
-                <Link to='/'>Back to Home</Link>
             </>
         )
     }
